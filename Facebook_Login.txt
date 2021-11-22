@@ -1,0 +1,90 @@
+Step 1 - setup
+    GoTo https://developers.facebook.com/ and create a new app  
+
+    Install @aws-amplify/cli by 
+    
+    "npm install -g @aws-amplify/cli"
+
+    Install aws-amplify by 
+    
+    'npm i aws-amplify'
+
+    setup aws-amplify "amplify init"
+
+        output: check "amplify init.txt"
+
+**After this steps the project is Initialized**
+
+Step 2 - configure authentication
+
+    add the authentication provider by running "amplify add auth"
+
+    choose Default configuration with socail Provider (federation)
+
+    How do you want users to login (use Email as required)
+        >Email
+
+    Then enter the urls for redirect for signin and signiout
+
+    Then select the facebook provider
+    
+    then add the app id and app secret from https://developers.facebook.com/
+
+**here the configuration is done now upload it by running "amplify push" **
+
+Step3 - setup facebook app at https://developers.facebook.com/
+
+    after that add the oauth domain from aws-exports.js to the facebook app in settings > basic in the "App Domains feild"
+
+    then add the  privacy policy and service policies urls in settings > basic
+
+    scroll down to bottom in  settings > basic and click on "Add Platform" and select website then add the website url 
+
+        https://<your-user-pool-domain>/oauth2/idpresponse
+    
+    Go in Add a Product and click on "Setup" on  "facebook login" and chosse web as platform 
+     
+    Under facebook login go in settings and in "Valid OAuth Redirect URIs" add
+
+        https://<your-user-pool-domain>/oauth2/idpresponse
+    
+    Then Turn on in development switch button
+
+** all the prerequistes are done now ** 
+
+Setp4 - Code
+
+    *in Root of the Project add the below lines
+
+    import Amplify from 'aws-amplify';
+    import awsconfig from '../aws-exports';
+
+    Amplify.configure(awsconfig);
+
+    *in file where the login functionalify has to be added
+
+    import { Auth } from 'aws-amplify';
+
+    <button onClick={() => Auth.federatedSignIn({provider: 'Facebook'})}>Open Facebook</button>
+
+    for checking user status
+
+    Auth.currentAuthenticatedUser()
+      .then(user => {this.setState({ user });
+                      console.log(user)  
+                        })
+      .catch(() => console.log("Not signed in"));
+  } 
+
+
+     
+    
+    
+
+            
+
+
+
+
+    
+

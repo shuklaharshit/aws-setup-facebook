@@ -1,0 +1,48 @@
+Note: It is recommended to run this command from the root of your app directory
+? Enter a name for the project testauth     
+The following configuration will be applied:
+
+Project information
+| Name: testauth
+| Environment: dev
+| Default editor: Visual Studio Code        
+| App type: javascript
+| Javascript framework: react
+| Source Directory Path: src
+| Distribution Directory Path: build
+| Build Command: npm.cmd run-script build
+| Start Command: npm.cmd run-script start
+
+? Initialize the project with the above configuration? Yes
+Using default provider  awscloudformation
+? Select the authentication method you want to use: AWS profile
+AWS access credentials can not be found.
+? Setup new user Yes
+Follow these steps to set up access to your AWS account:
+
+Sign in to your AWS administrator account:
+https://console.aws.amazon.com/
+Press Enter to continue
+
+Specify the AWS Region
+? region:  us-east-2
+Specify the username of the new IAM user:
+? user name:  harshit
+Complete the user creation using the AWS console
+https://console.aws.amazon.com/iam/home?region=us-east-2#/users$new?step=final&accessKey&userNames=harshit&permissionType=policies&policies=arn:aws:iam::aws:policy%2FAdministratorAccess
+Press Enter to continue
+
+Enter the access key of the newly created user:
+? accessKeyId:  ********************
+? secretAccessKey:  ****************************************
+This would update/create the AWS Profile in your local machine
+? Profile Name:  TestAuth
+
+Successfully set up the new user.
+
+For more information on AWS Profiles, see:
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
+
+? Please choose the profile you want to use TestAuth
+Adding backend environment dev to AWS Amplify app: d22yxviu2eisom
+- Initializing project in the cloud..
