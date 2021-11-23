@@ -1,6 +1,8 @@
 Step 1 - setup
     GoTo https://developers.facebook.com/ and create a new app  
 
+    **below steps are do be done only once per app**
+
     Install @aws-amplify/cli by 
     
     "npm install -g @aws-amplify/cli"
@@ -65,16 +67,25 @@ Setp4 - Code
 
     import { Auth } from 'aws-amplify';
 
-    <button onClick={() => Auth.federatedSignIn({provider: 'Facebook'})}>Open Facebook</button>
+    //for facebook
+    <button onClick={() => Auth.federatedSignIn({provider: 'Facebook'})}>Continue with Facebook</button>
 
-    for checking user status
+    //for email or facebook
+    <button onClick={() => Auth.federatedSignIn()}>Signin</button> 
+
+
+    //for checking user status
 
     Auth.currentAuthenticatedUser()
-      .then(user => {this.setState({ user });
+      .then(user => {
+                    this.setState({ user });
                       console.log(user)  
-                        })
+                        });
       .catch(() => console.log("Not signed in"));
-  } 
+        } 
+
+    //for Signout
+     <button onClick={() => Auth.signOut()}>Sign Out </button>
 
 
      

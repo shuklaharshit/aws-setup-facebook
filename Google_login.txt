@@ -1,0 +1,100 @@
+Step 1 -Set up
+    GoTo https://console.cloud.google.com/
+    make new project , and select it
+    
+    Then in User type select external
+    
+    Give name to application in "App name" field
+
+    Select a User support email 
+
+    In "Developer contact information" add the email address
+
+    Then click on save and continue
+
+    Goto credentails click on "create credentails" and select "OAuth client ID"
+
+    In application type choose WebAPP then click on "create" at bottom
+
+    This will give us Client ID and secret
+
+    ** the setup for google now is done **
+
+    **below steps are do be done only once per app**
+
+    Install @aws-amplify/cli by 
+    
+    "npm install -g @aws-amplify/cli"
+
+    Install aws-amplify by 
+    
+    'npm i aws-amplify'
+
+    setup aws-amplify "amplify init"
+
+        output: check "amplify init.txt"
+
+Step 2 - configure authentication
+
+    add the authentication provider by running "amplify add auth"
+
+    choose Default configuration with socail Provider (federation)
+
+    How do you want users to login (use Email as required)
+        >Email
+
+    Then enter the urls for redirect for signin and signiout
+
+    Then select the google provider from the list of socail providers
+    
+    then add the Google Client ID and  secret from https://console.cloud.google.com/ from previously created app
+
+    then run amplify push to deploy the service
+
+**here the configuration is done now upload it by running "amplify push" **
+
+Step 3 - configure google developer console from https://console.cloud.google.com/
+
+    Go to the Google developer console.
+
+    On the left navigation bar, choose Credentials.
+
+    Select the client you created in the first step and click the edit button.
+
+    Type your user pool domain from aws-exports.js file into Authorized Javascript origins.
+        i.e https://<user pool domain>
+
+    Type your user pool domain with the /oauth2/idpresponse endpoint into Authorized Redirect URIs.
+        i.e  https://<user pool domain>/oauth2/idpresponse 
+    
+Setp4 - Code
+
+    *in Root of the Project add the below lines
+
+    import Amplify from 'aws-amplify';
+    import awsconfig from '../aws-exports';
+
+    Amplify.configure(awsconfig);
+
+    *in file where the login functionalify has to be added
+
+    import { Auth } from 'aws-amplify';
+
+    //for Google
+    <button onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Continue with Facebook</button>
+
+    //for email or facebook
+    <button onClick={() => Auth.federatedSignIn()}>Signin</button> 
+
+    //for checking user status
+
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+                    this.setState({ user });
+                      console.log(user)  
+                        });
+      .catch(() => console.log("Not signed in"));
+  } 
+
+    //for Signout
+     <button onClick={() => Auth.signOut()}>Sign Out </button>
