@@ -10,6 +10,8 @@ Step 1 - setup
     Install aws-amplify by 
     
     'npm i aws-amplify'
+     
+    run  "amplify configure"
 
     setup aws-amplify "amplify init"
 
@@ -36,7 +38,7 @@ Step 2 - configure authentication
 
 Step3 - setup facebook app at https://developers.facebook.com/
 
-    after that add the oauth domain from aws-exports.js to the facebook app in settings > basic in the "App Domains feild"
+    after that add the oauth domain from aws-exports.js to the facebook app in settings > basic in the "App Domains" feild
 
     then add the  privacy policy and service policies urls in settings > basic
 
