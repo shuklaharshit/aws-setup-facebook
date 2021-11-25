@@ -1,2 +1,5 @@
 authentication with amplify docs
 https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/
+
+Blog guide
+https://dev.to/dabit3/the-complete-guide-to-user-authentication-with-the-amplify-framework-2inh
