@@ -1,0 +1,41 @@
+(In react)
+const initializeGsi = () => {
+        google.accounts.id.initialize({
+            client_id: 'insert-your-client-id-here',
+        });
+        google.accounts.id.prompt(notification => {
+            console.log(notification)
+        });
+ }
+
+    useEffect(() => {
+        const script = document.createElement('script')
+        script.src = 'https://accounts.google.com/gsi/client'
+        script.onload = initializeGSI()
+        script.async = true;
+        document.querySelector('body').appendChild(script)
+    }, [])
+
+
+That means you need to decode the ID token to get the users info.
+We can do that by adding the jwt-decode library with 
+    npm install --save jwt-decode
+
+
+NoTes
+
+Clicking the X button on the one-tap prompt dismisses the prompt.
+ If you refresh the page after this, you won't see the button come back. Why?
+
+The One Tap library has some additional side effects around dismissing the prompt.
+If you've clicked the X button, a cookie has been added to your domain called g_state. 
+if you clear that cookie value, you'll see the prompt come back.
+
+Clicking the X button more than once will enter you into an Exponential Cool Down mode. What does that mean?
+
+You cannot clear cookies or use an incognito window to get around it .
+It seems to be based on your browser and website (maybe IP?). If you accidentally run into this, time to take a break.
+Or try a different browser/website URL.
+
+The One Tap Sign-In button only works on Chrome & Firefox across Android, iOS, macOS, Linux, Window 10. 
+If you have users on Safari or Edge, they won't see the prompt

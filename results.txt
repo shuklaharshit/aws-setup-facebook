@@ -1,1 +1,9 @@
 https://myunieef5f705-eef5f705-devauth.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=6enbdr3msbh440007es7gn49a2&redirect_uri=http://localhost:8080/
+
+
+https://developers.google.com/identity/gsi/web
+is known as One-tap sign-up
+https://www.intricatecloud.io/2020/12/passwordless-sign-in-with-google-one-tap-for-web/
+
+
+
