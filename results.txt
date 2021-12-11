@@ -1,9 +1,25 @@
-https://myunieef5f705-eef5f705-devauth.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=6enbdr3msbh440007es7gn49a2&redirect_uri=http://localhost:8080/
+https://myunieef5f705-eef5f705-devauth.auth.us-east-2.amazoncognito.com/login?client_id=24j8dttm3662nbp8p7rglccjei&response_type=code&scope=email+openid&redirect_uri=http://localhost:8080/
 
+
+
+//sydney
+https://myunie13870ca-e13870ca-devnz.auth.ap-southeast-2.amazoncognito.com/oauth2/idpresponse
+https://myunie13870ca-e13870ca-devnz.auth.ap-southeast-2.amazoncognito.com/login?response_type=code&client_id=48vv3v21ofp83sv0iirkvjqpid&redirect_uri=http://localhost:3000/
+
+// my env=devnz
 
 https://developers.google.com/identity/gsi/web
 is known as One-tap sign-up
 https://www.intricatecloud.io/2020/12/passwordless-sign-in-with-google-one-tap-for-web/
 
 
+//for linkedin refer
+https://aws.amazon.com/premiumsupport/knowledge-center/cognito-linkedin-auth0-social-idp/
 
+//auth0
+Vkdp9ci7E7089KiHBOyOT8zJ3cwzDYvI
+1KqvXITvo5T1jkOjb06b-4k2sssCZYvEatcdxWQTGe3YoAkz-aGYOTrU85NAY9ar
+
+//linkedin
+86au3wqqzc4j7g
+U2H7vHYBPjzrLlsV

@@ -98,3 +98,7 @@ Setp4 - Code
 
     //for Signout
      <button onClick={() => Auth.signOut()}>Sign Out </button>
+
+
+
+     https://us-east-2.console.aws.amazon.com/cognito/v2/idp/user-pools/us-east-2_xlzo6N5PA/properties?region=us-east-2
