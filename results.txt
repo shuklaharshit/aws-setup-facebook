@@ -19,7 +19,23 @@ https://aws.amazon.com/premiumsupport/knowledge-center/cognito-linkedin-auth0-so
 //auth0
 Vkdp9ci7E7089KiHBOyOT8zJ3cwzDYvI
 1KqvXITvo5T1jkOjb06b-4k2sssCZYvEatcdxWQTGe3YoAkz-aGYOTrU85NAY9ar
+openid profile email
+https://dev-mt3hktn6.au.auth0.com
 
 //linkedin
 86au3wqqzc4j7g
 U2H7vHYBPjzrLlsV
+
+
+//Amazon Cognito domain
+https://myunie13870ca-e13870ca-devnz.auth.ap-southeast-2.amazoncognito.com
+
+
+
+//new
+arn:aws:iam::609881751822:oidc-provider/dev-mt3hktn6.au.auth0.com
+
+AWS.config.region = 'ap-southeast-2'; // Region
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'ap-southeast-2:94aa49b4-fc8a-473c-9aff-603e0f787a92',
+});
